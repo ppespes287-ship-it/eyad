@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>جانسون | متجر إياد ويوسف</title>
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background: linear-gradient(145deg, #0a2842, #041220);
+      color: white;
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      background: rgba(8, 28, 48, 0.85);
+      backdrop-filter: blur(16px);
+      border: 2px solid #0066cc;
+      border-radius: 50px;
+      padding: 30px;
+    }
+
+    /* الهيدر */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+      border-bottom: 3px solid #0099ff;
+      padding-bottom: 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo i {
+      font-size: 3rem;
+      color: #0099ff;
+    }
+
+    .logo h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: white;
+    }
+
+    /* بطاقة التواصل */
+    .info-card {
+      background: rgba(0, 102, 204, 0.2);
+      border: 1px solid #00a6ff;
+      border-radius: 50px;
+      padding: 15px 25px;
+    }
+
+    .info-card span, .info-card a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.1rem;
+      color: #e0f0ff;
+      text-decoration: none;
+      margin: 5px 0;
+    }
+
+    .info-card i {
+      color: #00ddff;
+      width: 25px;
+    }
+
+    /* البانر - أول مدخل */
+    .banner {
+      width: 100%;
+      height: 450px;
+      border-radius: 30px;
+      margin-bottom: 40px;
+      border: 4px solid #33ccff;
+      box-shadow: 0 0 40px #0099ff;
+      overflow: hidden;
+    }
+
+    .banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* المنتجات */
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .section-title i {
+      font-size: 2.2rem;
+      color: #33ccff;
+    }
+
+    .section-title h3 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: white;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      margin-bottom: 40px;
+    }
+
+    .product-card {
+      background: rgba(0, 51, 102, 0.5);
+      backdrop-filter: blur(12px);
+      border: 2px solid #0077cc;
+      border-radius: 35px;
+      padding: 25px;
+      text-align: center;
+    }
+
+    .image-frame {
+      width: 200px;
+      height: 200px;
+      margin: 0 auto 20px;
+      border-radius: 40px 20px 40px 20px;
+      border: 4px solid #00a6ff;
+      overflow: hidden;
+    }
+
+    .image-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .product-card h4 {
+      font-size: 1.9rem;
+      color: #d4f0ff;
+      margin-bottom: 10px;
+    }
+
+    .desc {
+      color: #b0e0ff;
+      font-size: 1.1rem;
+      margin: 10px 0;
+    }
+
+    .price {
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: #88ddff;
+      margin: 15px 0;
+    }
+
+    .btn {
+      background: #0066cc;
+      border: none;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      border: 1px solid #88ddff;
+    }
+
+    .btn:hover {
+      background: #0088ff;
+    }
+
+    /* الفوتر */
+    .footer {
+      margin-top: 40px;
+      border-top: 2px solid #0077cc;
+      padding-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background: rgba(0,102,204,0.2);
+      padding: 20px 30px;
+      border-radius: 60px;
+    }
+
+    .contact-info a, .contact-info span {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #e0f0ff;
+      text-decoration: none;
+      font-size: 1.1rem;
+    }
+
+    .social {
+      display: flex;
+      gap: 25px;
+    }
+
+    .social a {
+      color: #99ddff;
+      font-size: 2rem;
+    }
+
+    @media (max-width: 950px) {
+      .product-grid { grid-template-columns: repeat(2, 1fr); }
+      .banner { height: 350px; }
+    }
+
+    @media (max-width: 600px) {
+      .product-grid { grid-template-columns: 1fr; }
+      .header { flex-direction: column; }
+      .info-card { width: 100%; }
+      .banner { height: 250px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+    <!-- الهيدر -->
+    <header class="header">
+      <div class="logo">
+        <i class="fas fa-baby"></i>
+        <h1>جانسون</h1>
+      </div>
+      
+      <div class="info-card">
+        <span><i class="fas fa-crown"></i> برعاية: إياد</span>
+        <span><i class="fas fa-user-tie"></i> إدارة: يوسف فاروق</span>
+        <span><i class="fas fa-code"></i> تطوير: أحمد عادل</span>
+        <span><i class="fab fa-facebook"></i> <a href="https://www.facebook.com/eyad.eslam.355" target="_blank">facebook.com/eyad.eslam.355</a></span>
+        <span><i class="fas fa-phone-alt"></i> <a href="tel:+201114020207">+20 11 14020207</a></span>
+      </div>
+    </header>
+
+    <!-- البانر - أول مدخل -->
+    <div class="banner">
+      <img src="banner.png" alt="بانر جانسون" onerror="this.style.backgroundColor='#003366'; this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'200\' viewBox=\'0 0 400 200\'%3E%3Crect width=\'400\' height=\'200\' fill=\'%230066cc\'/%3E%3Ctext x=\'120\' y=\'120\' fill=\'white\' font-size=\'30\' font-family=\'Tajawal\'%3Eبانر جانسون%3C/text%3E%3C/svg%3E'">
+    </div>
+
+    <!-- المنتجات -->
+    <div class="section-title">
+      <i class="fas fa-box-open"></i>
+      <h3>منتجاتنا الأصلية</h3>
+    </div>
+
+    <div class="product-grid">
+      <!-- 1. جونسون الناعم -->
+      <div class="product-card">
+        <div class="image-frame">
+          <img src="eyad.png" alt="جونسون الناعم" onerror="this.style.backgroundColor='#004080'; this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'200\' height=\'200\' viewBox=\'0 0 200 200\'%3E%3Crect width=\'200\' height=\'200\' fill=\'%23004488\'/%3E%3Ctext x=\'30\' y=\'115\' fill=\'white\' font-size=\'20\' font-family=\'Tajawal\'%3Eجونسون%3C/text%3E%3C/svg%3E'">
+        </div>
+        <h4>جونسون الناعم</h4>
+        <div class="desc">بودرة أطفال - نعومة فائقة</div>
+        <div class="price">85 جنيه</div>
+        <button class="btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+      </div>
+      
+      <!-- 2. كاندوم بل -->
+      <div class="product-card">
+        <div class="image-frame">
+          <img src="youssef.png" alt="كاندوم بل" onerror="this.style.backgroundColor='#663300'; this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'200\' height=\'200\' viewBox=\'0 0 200 200\'%3E%3Crect width=\'200\' height=\'200\' fill=\'%238B4513\'/%3E%3Ctext x=\'25\' y=\'115\' fill=\'white\' font-size=\'20\' font-family=\'Tajawal\'%3Eكاندوم بل%3C/text%3E%3C/svg%3E'">
+        </div>
+        <h4>كاندوم بل</h4>
+        <div class="desc">شكلاتة بلجيكي فاخرة</div>
+        <div class="price">120 جنيه</div>
+        <button class="btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+      </div>
+      
+      <!-- 3. فازلين -->
+      <div class="product-card">
+        <div class="image-frame">
+          <img src="ahmed.png" alt="فازلين" onerror="this.style.backgroundColor='#006699'; this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'200\' height=\'200\' viewBox=\'0 0 200 200\'%3E%3Crect width=\'200\' height=\'200\' fill=\'%23006699\'/%3E%3Ctext x=\'50\' y=\'115\' fill=\'white\' font-size=\'20\' font-family=\'Tajawal\'%3Eفازلين%3C/text%3E%3C/svg%3E'">
+        </div>
+        <h4>فازلين</h4>
+        <div class="desc">ترطيب عميق - أصلي</div>
+        <div class="price">65 جنيه</div>
+        <button class="btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+      </div>
+    </div>
+
+    <!-- الفوتر -->
+    <footer class="footer">
+      <div class="contact-info">
+        <a href="https://www.facebook.com/eyad.eslam.355" target="_blank"><i class="fab fa-facebook"></i> eyad.eslam.355</a>
+        <a href="tel:+201114020207"><i class="fas fa-phone-alt"></i> +20 11 14020207</a>
+        <span><i class="fas fa-crown"></i> برعاية إياد</span>
+        <span><i class="fas fa-user-tie"></i> إدارة يوسف فاروق</span>
+        <span><i class="fas fa-code"></i> المبرمج: أحمد عادل</span>
+      </div>
+      <div class="social">
+        <a href="https://www.facebook.com/eyad.eslam.355" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://wa.me/201114020207" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="tel:+201114020207"><i class="fas fa-phone"></i></a>
+      </div>
+    </footer>
+
+    <!-- حقوق الملكية -->
+    <div style="text-align: center; margin-top: 30px; color: #88ccff;">
+      <i class="fas fa-check-circle"></i> جميع المنتجات أصلية 100% | متجر جانسون بإدارة يوسف فاروق
+    </div>
+
+  </div>
+</body>
+</html>
